@@ -1,0 +1,354 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800&display=swap");
+/*variable declaration starts here */
+:root {
+  /* CSS HEX */
+  --shark: #202324;
+  --laser: #c7a86a;
+  --tobacco-brown: #6e6044;
+  --mondo: #4a4230;
+  --friar-gray: #7f7f76;
+  --cape-cod: #3c4441;
+  --nandor: #545c58;
+  --abbey: #515354;
+  --natural-gray: #8c8c84;
+  --text-clr: #e5e5e5;
+  --white: #ffffff;
+  --clr-txt: #fdff32;
+  --Dbody-clr: #000000;
+  --parentSpace: 30px 30px 0 30px;
+  --max-width: 1600px;
+  --tran: 0.3s all linear;
+  /*========== Font and typography ==========*/
+  --font-bold: "Exo 2", sans-serif;
+  --biggest-font-size: 2rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+  --text-width: 400px;
+  /*========== Font weight ==========*/
+  --thin: 300;
+  --regular: 400;
+}
+
+.auto {
+  margin: 0 auto;
+}
+
+/*
+    variable declaration ends here
+*/
+/* Responsive typography */
+@media screen and (min-width: 992px) {
+  :root {
+    --biggest-font-size: 4rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+.title {
+  line-height: 1;
+  font-size: var(--biggest-font-size);
+  font-family: var(--font-bold);
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+p {
+  max-width: 600px !important;
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+a,
+a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.btn {
+  background-color: var(--clr-txt);
+  text-transform: uppercase;
+  font-family: var(--font-bold);
+  width: 500;
+  font-weight: 600;
+  border-radius: 0;
+  font-size: var(--small-font-size);
+  transition: var(--tran);
+  width: -moz-max-content;
+  width: max-content;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+body {
+  position: relative;
+  line-height: 1.3;
+  color: var(--white);
+  background-color: var(--Dbody-clr);
+  width: 100%;
+  overflow-x: hidden;
+  font-family: var(--font-bold);
+}
+
+header {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  padding: 5px 5px;
+  position: absolute;
+  top: 0;
+}
+header .inner {
+  height: 4rem;
+  width: 95%;
+  background-color: var(--Dbody-clr);
+  max-width: var(--max-width);
+  border-radius: 8px;
+  display: flex;
+  place-items: center;
+}
+header .inner .logo {
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+  font-family: var(--font-bold);
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: var(--h3-font-size);
+  place-items: center;
+  color: var(--white);
+}
+header .inner .logo img {
+  width: 4rem;
+}
+header .inner .nav-open {
+  font-size: var(--biggest-font-size);
+  margin-left: auto;
+}
+header .inner .nav-ul {
+  margin-left: auto;
+  display: flex;
+  place-items: center;
+}
+header .inner .nav-ul ul {
+  display: flex;
+}
+header .inner .nav-ul ul li {
+  margin-right: 30px;
+  font-family: var(--font-bold);
+  font-size: var(--small-font-size);
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: gray;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: var(--tran);
+  position: relative;
+}
+header .inner .nav-ul ul li:hover {
+  color: var(--white);
+}
+header .inner .nav-ul ul .active {
+  color: #fff;
+}
+header .inner .nav-ul ul .active:after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 50%;
+  transition: 0.3s width linear;
+  position: absolute;
+  top: 30px;
+  background-color: var(--clr-txt);
+  color: #ffffff;
+}
+header .inner .nav-ul ul li:after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 10%;
+  transition: 0.3s width linear;
+  position: absolute;
+  top: 30px;
+}
+header .inner .nav-ul ul li:hover:after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 50%;
+  background-color: var(--clr-txt);
+}
+header .inner .nav-ul .btn {
+  background-color: var(--clr-txt);
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 0;
+  font-size: var(--small-font-size);
+  margin-right: 15px;
+  transition: var(--tran);
+}
+header .inner .nav-ul .btn:last-child {
+  background-color: transparent;
+  color: var(--clr-txt);
+  border: 1px solid #fdff32;
+}
+header .inner .nav-ul .btn:hover {
+  background-color: transparent;
+  border: 1px solid #fdff32;
+}
+header .inner .nav-ul .btn:last-child:hover {
+  background-color: var(--clr-txt);
+  color: var(--Dbody-clr);
+}
+@media screen and (max-width: 700px) {
+  header .inner .nav-ul {
+    display: none;
+  }
+}
+@media (min-width: 700px) {
+  header .inner .nav-open {
+    display: none;
+  }
+}
+
+.hero {
+  width: 100%;
+  background: url(../img/wave-haikei.svg) no-repeat center center;
+  background-size: cover;
+  padding: 6rem 15px;
+}
+.hero .row {
+  max-width: var(--max-width);
+}
+@media (min-width: 700px) {
+  .hero .row {
+    padding: 20px 30px;
+    justify-content: space-between;
+  }
+}
+.hero .row div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero .row div img {
+  width: 100%;
+  max-width: 25rem;
+}
+.hero .row div .title {
+  font-family: var(--font-bold);
+  font-weight: 600;
+  color: #feffb3;
+  text-transform: capitalize;
+  font-size: var(--h1-font-size);
+}
+.hero .row div .title span {
+  color: #fff !important;
+  position: relative;
+}
+.hero .row div .title span:after {
+  content: "";
+  width: 100%;
+  height: 5px;
+  text-decoration: underline;
+  display: block;
+  position: absolute;
+  bottom: -10px;
+  right: 0;
+  background-color: var(--clr-txt);
+}
+.hero .row div p.info {
+  font-family: var(--font-bold);
+  font-weight: 400;
+  margin-top: 20px;
+  font-size: var(--h3-font-size);
+}
+.hero .row div .btn-div {
+  display: flex !important;
+  flex-flow: row wrap;
+  width: -moz-max-content;
+  width: max-content;
+  gap: 15px 10px;
+}
+
+main {
+  width: 100%;
+  background-color: var(--white);
+  padding: var(--parentSpace);
+}
+main #about {
+  width: 100%;
+  margin: 0 auto;
+  max-width: var(--max-width);
+  color: var(--Dbody-clr);
+  display: grid;
+  place-items: center;
+}
+main #about .row {
+  justify-content: space-between;
+}
+main #about .row .img-div {
+  display: grid;
+  place-items: center;
+}
+main #about .row .head {
+  text-transform: uppercase;
+  font-weight: 700;
+  word-spacing: 4px;
+  font-size: var(--h1-font-size);
+}
+main #about .row .div-com {
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
+}
+main #about .row .div-com .txt {
+  width: 80%;
+}
+main #about .row .div-com .txt h2 {
+  text-transform: capitalize;
+  font-weight: 600;
+}
+main #about .row .div-com i {
+  font-size: 35px;
+  height: 50px;
+  display: flex;
+  width: 50px;
+  background-color: var(--clr-txt);
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}/*# sourceMappingURL=style.css.map */
